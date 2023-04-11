@@ -27,5 +27,17 @@ public class Homework1 {
     каждый элемент которого равен разности элементов двух входящих массивов в той же ячейке.
     Если длины массивов не равны, необходимо как-то оповестить пользователя. */
 
-
+    public static int[] difOfArrays(int[] firstArray, int[] secondArray) {
+        if (firstArray == null || secondArray == null) {
+            throw new RuntimeException("Arrays can't be null");
+        }
+        if (firstArray.length != secondArray.length) {
+            throw new RuntimeException("Arrays lengths must be equal");
+        }
+        int[] result = new int[firstArray.length];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = firstArray[i] - secondArray[i];
+        }
+        return result;
+    }
 }
